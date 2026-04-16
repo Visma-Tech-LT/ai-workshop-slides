@@ -1,0 +1,55 @@
+</div><!-- /deck -->
+
+<!-- ── Navigation ── -->
+<div class="nav">
+  <button class="nav-btn" id="prevBtn" onclick="go(-1)">&#8592;</button>
+  <span class="nav-counter" id="counter">1 / 19</span>
+  <button class="nav-btn" id="nextBtn" onclick="go(1)">&#8594;</button>
+</div>
+
+
+<script>
+let cur=0;
+const slides=document.querySelectorAll('.slide'),
+      total=slides.length,
+      counter=document.getElementById('counter'),
+      prog=document.getElementById('progress'),
+      slideNum=document.getElementById('slideNum');
+
+function show(i){
+  slides.forEach((s,j)=>{
+    s.classList.remove('active','prev');
+    if(j===i) s.classList.add('active');
+    else if(j<i) s.classList.add('prev');
+  });
+  const nav=Array.from(slides).filter(s=>!s.classList.contains('skip-nav'));
+  const pos=nav.indexOf(slides[i]);
+  const label=pos>=0?`${pos+1} / ${nav.length}`:'-';
+  counter.textContent=label;
+  slideNum.textContent=label;
+  prog.style.width=`${((i+1)/total)*100}%`;
+}
+function go(d){
+  let n=cur+d;
+  while(n>=0&&n<total&&slides[n].classList.contains('skip-nav'))n+=d;
+  if(n>=0&&n<total){cur=n;show(cur)}
+}
+function goToId(id){
+  const el=document.getElementById(id);
+  if(!el)return;
+  const idx=Array.from(slides).indexOf(el);
+  if(idx>=0){cur=idx;show(cur)}
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();go(1)}
+  if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}
+  if(e.key==='Home'){e.preventDefault();cur=0;show(0)}
+  if(e.key==='End'){e.preventDefault();cur=total-1;show(cur)}
+});
+let tx=0;
+document.addEventListener('touchstart',e=>{tx=e.changedTouches[0].screenX});
+document.addEventListener('touchend',e=>{const d=tx-e.changedTouches[0].screenX;if(Math.abs(d)>50)go(d>0?1:-1)});
+show(0);
+</script>
+</body>
+</html>

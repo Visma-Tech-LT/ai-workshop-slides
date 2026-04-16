@@ -1,0 +1,50 @@
+<!-- ════════════════════════════════════════
+     3 — INSTRUCTIONS
+════════════════════════════════════════ -->
+<div class="slide" data-i="3">
+  <div class="split">
+    <div class="split-l">
+      <div class="dot-grid"></div>
+      <div class="section-num">01</div>
+      <div style="position:relative;z-index:1">
+        <div class="eyebrow eyebrow-green">01 · Instructions</div>
+        <h2>Agent<br><span class="accent">Memory</span></h2>
+        <p class="body-md">Persistent context that loads at every session start. The agent reads this before anything else — project conventions, architecture, workflow rules.</p>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
+          <div class="card" style="padding:18px 22px">
+            <div style="font-size:13px;color:var(--muted);margin-bottom:6px;font-family:var(--f-mono);letter-spacing:.08em">CLAUDE CODE</div>
+            <code style="font-size:16px">CLAUDE.md</code> <span class="body-sm" style="color:var(--muted)">at project root</span>
+          </div>
+          <div class="card" style="padding:18px 22px">
+            <div style="font-size:13px;color:var(--muted);margin-bottom:6px;font-family:var(--f-mono);letter-spacing:.08em">COPILOT CLI</div>
+            <code style="font-size:16px">.github/copilot-instructions.md</code>
+          </div>
+          <div class="card" style="padding:18px 22px;border-color:rgba(103,168,112,.25);background:rgba(103,168,112,.05)">
+            <div style="font-size:13px;color:var(--green);margin-bottom:6px;font-family:var(--f-mono);letter-spacing:.08em">CROSS-TOOL TIP</div>
+            <span class="body-sm">Use <code>AGENTS.md</code> at root — both tools read it natively.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="split-r">
+      <div class="code-block">
+        <div class="code-label">CLAUDE.md / copilot-instructions.md</div>
+        <pre><span class="cm">## Architecture</span>
+<span class="s">TypeScript monorepo (pnpm workspaces)
+API: Express + Zod validation
+DB: PostgreSQL via Drizzle ORM
+Tests: Vitest, coverage ≥ 80%</span>
+
+<span class="cm">## Workflow</span>
+<span class="s">Plan first, get approval, then implement.
+Auto-commit after each task completes.</span>
+
+<span class="cm">## Code Style</span>
+<span class="s">- Named exports only (no default)
+- Prefer const arrow functions
+- No any types — use unknown + guards</span></pre>
+      </div>
+      <p class="body-sm" style="margin-top:20px;padding:0 4px">💡 Keep instructions concise — both tools inject them into <strong style="color:var(--text)">every session</strong>, consuming permanent context tokens.</p>
+    </div>
+  </div>
+</div>

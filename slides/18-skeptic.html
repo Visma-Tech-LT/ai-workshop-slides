@@ -1,0 +1,57 @@
+<!-- ════════════════════════════════════════
+     15 — THE SKEPTIC AGENT
+════════════════════════════════════════ -->
+<div class="slide" data-i="15">
+  <div class="split">
+    <div class="split-l">
+      <div class="dot-grid"></div>
+      <div style="position:relative;z-index:1">
+        <div class="eyebrow eyebrow-red">Adversarial Review</div>
+        <h2>The <span class="red">Skeptic</span></h2>
+        <p class="body-md" style="margin-bottom:28px">A second agent whose only job is finding flaws. Structurally incapable of approval — it succeeds by finding problems.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px">
+          <span class="chip chip-green">PROCEED</span>
+          <span class="chip chip-orange">REVISE</span>
+          <span class="chip chip-red">DO NOT PROCEED</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px 20px">
+          <p class="body-sm">1. Assumption Audit</p>
+          <p class="body-sm">2. Edge Cases</p>
+          <p class="body-sm">3. Feasibility</p>
+          <p class="body-sm">4. Scope Creep</p>
+          <p class="body-sm">5. Error Handling</p>
+          <p class="body-sm">6. Dependencies</p>
+          <p class="body-sm">7. Testing Gaps</p>
+          <p class="body-sm">8. Security</p>
+        </div>
+        <div class="card" style="margin-top:20px;border-color:rgba(219,107,125,.25);background:rgba(219,107,125,.05);padding:16px 22px">
+          <p class="body-sm"><strong style="color:var(--red)">Every plan has gaps.</strong> The skeptic's job is to find them before 200 lines of code prove it.</p>
+        </div>
+      </div>
+    </div>
+    <div class="split-r" style="justify-content:center">
+      <div class="code-block">
+        <div class="code-label">.claude/agents/skeptic.md</div>
+        <pre><span class="p">---</span>
+<span class="n">name</span><span class="p">:</span> <span class="s">skeptic</span>
+<span class="n">description</span><span class="p">: ></span>
+  <span class="s">Plan critic. Use after plan.md is created,
+  before implementation. Produces skeptic-notes.md.</span>
+<span class="n">allowed-tools</span><span class="p">:</span> <span class="p">[</span><span class="s">Read</span><span class="p">,</span> <span class="s">Glob</span><span class="p">]</span>
+<span class="p">---</span>
+You are an <span class="cm">adversarial plan reviewer</span>.
+
+Check: assumptions, edge cases, feasibility,
+scope, error handling, dependencies,
+testing gaps, security.
+
+Verdict: <span class="cm">PROCEED</span> / <span class="v">REVISE</span> / <span class="v">DO NOT PROCEED</span>
+
+Rules:
+<span class="s">- Never approve without findings
+- Reference specific lines
+- Ask questions — do not rewrite</span></pre>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+<!-- ════════════════════════════════════════
+     10 — PART 1 EXERCISE
+════════════════════════════════════════ -->
+<div class="slide" data-i="10">
+  <div class="split">
+    <div class="split-l">
+      <div class="dot-grid"></div>
+      <div style="position:relative;z-index:1">
+        <div class="eyebrow eyebrow-green" style="margin-bottom:20px">Part 1 · Exercise · 10:15</div>
+        <h2>Build <span class="accent">Logstick</span></h2>
+        <p class="body-md" style="margin-bottom:28px">Build a time-logging app skeleton from scratch — calendar view + log entry form. Then configure the agent platform around it so autonomous development becomes possible.</p>
+        <div class="wf" style="margin-bottom:28px;flex-wrap:wrap;gap:8px">
+          <div class="wf-box green">Skeleton</div><div class="wf-arrow">→</div>
+          <div class="wf-box green">CLAUDE.md</div><div class="wf-arrow">→</div>
+          <div class="wf-box green">Agent</div><div class="wf-arrow">→</div>
+          <div class="wf-box green">Skill</div><div class="wf-arrow">→</div>
+          <div class="wf-box green">Hook</div><div class="wf-arrow">→</div>
+          <div class="wf-box green">MCP</div>
+        </div>
+        <div class="card" style="border-color:rgba(103,168,112,.25);background:rgba(103,168,112,.05);padding:18px 22px">
+          <p class="body-sm"><strong style="color:var(--green)">Done when:</strong> Claude can open the repo, understand the project, run tests, and you trust it to work autonomously.</p>
+        </div>
+      </div>
+    </div>
+    <div class="split-r" style="justify-content:center;display:flex;flex-direction:column;gap:14px">
+      <div style="font-size:13px;font-family:var(--f-mono);color:var(--muted);letter-spacing:.1em;margin-bottom:4px">INSPIRATION — mix and match what fits your stack</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div class="card" style="padding:16px 18px">
+          <div style="font-size:11px;font-family:var(--f-mono);color:var(--blue);margin-bottom:8px;letter-spacing:.08em">AGENTS</div>
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <p class="body-sm" style="color:var(--text)">🔍 code-researcher</p>
+            <p class="body-sm">maps the codebase, never writes</p>
+            <p class="body-sm" style="color:var(--text);margin-top:6px">🧪 test-writer</p>
+            <p class="body-sm">writes unit tests for a given file</p>
+            <p class="body-sm" style="color:var(--text);margin-top:6px">🎨 ui-reviewer</p>
+            <p class="body-sm">checks components against design rules</p>
+          </div>
+        </div>
+        <div class="card" style="padding:16px 18px">
+          <div style="font-size:11px;font-family:var(--f-mono);color:var(--orange);margin-bottom:8px;letter-spacing:.08em">SKILLS</div>
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <p class="body-sm" style="color:var(--text)">⚡ /new-feature</p>
+            <p class="body-sm">scaffold component + test + story</p>
+            <p class="body-sm" style="color:var(--text);margin-top:6px">📋 /create-plan</p>
+            <p class="body-sm">research → structured plan.md</p>
+            <p class="body-sm" style="color:var(--text);margin-top:6px">🔎 /code-review</p>
+            <p class="body-sm">review diff against conventions</p>
+          </div>
+        </div>
+        <div class="card" style="padding:16px 18px">
+          <div style="font-size:11px;font-family:var(--f-mono);color:var(--purple);margin-bottom:8px;letter-spacing:.08em">HOOKS</div>
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <p class="body-sm" style="color:var(--text)">🧪 PreToolUse: git commit</p>
+            <p class="body-sm">run tests — block if they fail</p>
+            <p class="body-sm" style="color:var(--text);margin-top:6px">✨ PostToolUse: file edit</p>
+            <p class="body-sm">auto-format with prettier / eslint</p>
+          </div>
+        </div>
+        <div class="card" style="padding:16px 18px">
+          <div style="font-size:11px;font-family:var(--f-mono);color:var(--green);margin-bottom:8px;letter-spacing:.08em">MCP</div>
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <p class="body-sm" style="color:var(--text)">🐙 GitHub MCP</p>
+            <p class="body-sm">create issues and PRs from Claude</p>
+            <p class="body-sm" style="color:var(--text);margin-top:6px">📋 Jira MCP</p>
+            <p class="body-sm">link commits to tickets automatically</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

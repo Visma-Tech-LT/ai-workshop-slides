@@ -1,0 +1,43 @@
+<!-- ════════════════════════════════════════
+     6 — MCP
+════════════════════════════════════════ -->
+<div class="slide" data-i="6">
+  <div class="split">
+    <div class="split-l">
+      <div class="dot-grid"></div>
+      <div class="section-num">04</div>
+      <div style="position:relative;z-index:1">
+        <div class="eyebrow eyebrow-green">05 · MCP</div>
+        <h2>Model Context<br><span class="accent">Protocol</span></h2>
+        <p class="body-md">The universal adapter for external tools. Open standard — both Claude Code and Copilot CLI support it.</p>
+        <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div class="card" style="padding:16px 20px;text-align:center"><div style="font-size:28px;margin-bottom:6px">🐙</div><div class="body-sm">GitHub</div></div>
+          <div class="card" style="padding:16px 20px;text-align:center"><div style="font-size:28px;margin-bottom:6px">📋</div><div class="body-sm">Jira</div></div>
+          <div class="card" style="padding:16px 20px;text-align:center"><div style="font-size:28px;margin-bottom:6px">💬</div><div class="body-sm">Slack</div></div>
+          <div class="card" style="padding:16px 20px;text-align:center"><div style="font-size:28px;margin-bottom:6px">🗄️</div><div class="body-sm">Databases</div></div>
+        </div>
+        <div class="card" style="margin-top:14px;border-color:rgba(229,162,62,.25);background:rgba(229,162,62,.05);padding:16px 20px">
+          <p class="body-sm"><strong style="color:var(--orange)">⚠ Trust matters.</strong> Only add MCP servers from providers you control. Tool calls expand prompt injection surface.</p>
+        </div>
+      </div>
+    </div>
+    <div class="split-r" style="display:flex;flex-direction:column;gap:16px;justify-content:center">
+      <div class="code-block">
+        <div class="code-label">Claude Code — .mcp.json</div>
+        <pre><span class="p">{</span>
+  <span class="n">"mcpServers"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="n">"github"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="n">"type"</span><span class="p">:</span> <span class="s">"http"</span><span class="p">,</span>
+      <span class="n">"url"</span><span class="p">:</span> <span class="s">"https://api.githubcopilot.com/mcp/"</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></pre>
+      </div>
+      <div class="code-block">
+        <div class="code-label">Copilot CLI — inside session</div>
+        <pre><span class="v">/mcp</span> add         <span class="c"># interactive form</span>
+<span class="v">/mcp</span> show        <span class="c"># list active servers</span></pre>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+<!-- ════════════════════════════════════════
+     13 — CONTEXT MANAGEMENT (visual)
+════════════════════════════════════════ -->
+<div class="slide" data-i="13">
+  <div class="split">
+    <div class="split-l">
+      <div class="dot-grid"></div>
+      <div style="position:relative;z-index:1">
+        <div class="eyebrow eyebrow-blue">09 · Context</div>
+        <h2>Intentional<br><span class="blue">Context Handoffs</span></h2>
+        <p class="body-md">Create a document at each checkpoint with exactly the context the next agent needs. Then flush.</p>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
+          <div class="card" style="border-color:rgba(65,155,215,.3);padding:16px 22px">
+            <strong style="color:var(--blue)">research.md</strong>
+            <p class="body-sm" style="margin-top:4px">What exists? How does it work? Constraints?</p>
+          </div>
+          <div class="card" style="border-color:rgba(229,162,62,.3);padding:16px 22px">
+            <strong style="color:var(--orange)">plan.md</strong>
+            <p class="body-sm" style="margin-top:4px">What to build? In what order? Success criteria?</p>
+          </div>
+          <div class="card" style="border-color:rgba(103,168,112,.3);padding:16px 22px">
+            <strong style="color:var(--green)">review.md</strong>
+            <p class="body-sm" style="margin-top:4px">What was built? Is it correct? What needs fixing?</p>
+          </div>
+        </div>
+        <div class="card" style="margin-top:14px;border-color:rgba(229,162,62,.25);background:rgba(229,162,62,.05);padding:16px 22px">
+          <p class="body-sm"><strong style="color:var(--orange)">Problems in planning extrapolate exponentially.</strong> Spend time getting the spec right.</p>
+        </div>
+      </div>
+    </div>
+    <div class="split-r" style="align-items:center;justify-content:center">
+      <!-- Context window fill diagram -->
+      <svg viewBox="0 0 440 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px">
+        <!-- Title -->
+        <text x="220" y="28" text-anchor="middle" fill="#6a7a88" font-family="Ubuntu,sans-serif" font-size="13" letter-spacing="1">WITHOUT STRUCTURE</text>
+        <!-- Context window bar - fills up chaotically -->
+        <rect x="60" y="46" width="320" height="48" rx="8" fill="#141920" stroke="rgba(255,255,255,.07)"/>
+        <rect x="60" y="46" width="310" height="48" rx="8" fill="rgba(219,107,125,.18)"/>
+        <text x="220" y="76" text-anchor="middle" fill="#db6b7d" font-family="JetBrains Mono,monospace" font-size="12">context full — compacting…</text>
+        <!-- divider -->
+        <line x1="60" y1="118" x2="380" y2="118" stroke="rgba(255,255,255,.05)" stroke-width="1" stroke-dasharray="4 4"/>
+        <text x="220" y="140" text-anchor="middle" fill="#6a7a88" font-family="Ubuntu,sans-serif" font-size="13" letter-spacing="1">WITH SPEC-DRIVEN FLOW</text>
+        <!-- Phase 1: Research -->
+        <rect x="40" y="154" width="105" height="188" rx="10" fill="#141920" stroke="rgba(65,155,215,.2)" stroke-width="1"/>
+        <text x="92" y="174" text-anchor="middle" fill="#419bd7" font-family="Ubuntu,sans-serif" font-weight="600" font-size="12">RESEARCH</text>
+        <rect x="52" y="182" width="82" height="14" rx="4" fill="rgba(65,155,215,.25)"/>
+        <rect x="52" y="200" width="70" height="14" rx="4" fill="rgba(65,155,215,.2)"/>
+        <rect x="52" y="218" width="78" height="14" rx="4" fill="rgba(65,155,215,.15)"/>
+        <rect x="52" y="236" width="60" height="14" rx="4" fill="rgba(65,155,215,.1)"/>
+        <text x="92" y="272" text-anchor="middle" fill="#419bd7" font-family="JetBrains Mono,monospace" font-size="10">→ research.md</text>
+        <text x="92" y="290" text-anchor="middle" fill="#3a4550" font-family="JetBrains Mono,monospace" font-size="10">/clear</text>
+        <!-- Arrow -->
+        <text x="167" y="250" text-anchor="middle" fill="#3a4550" font-size="24">→</text>
+        <!-- Phase 2: Plan -->
+        <rect x="185" y="154" width="105" height="188" rx="10" fill="#141920" stroke="rgba(229,162,62,.2)" stroke-width="1"/>
+        <text x="237" y="174" text-anchor="middle" fill="#e5a23e" font-family="Ubuntu,sans-serif" font-weight="600" font-size="12">PLAN</text>
+        <rect x="197" y="182" width="82" height="14" rx="4" fill="rgba(229,162,62,.25)"/>
+        <rect x="197" y="200" width="65" height="14" rx="4" fill="rgba(229,162,62,.2)"/>
+        <rect x="197" y="218" width="75" height="14" rx="4" fill="rgba(229,162,62,.15)"/>
+        <text x="237" y="272" text-anchor="middle" fill="#e5a23e" font-family="JetBrains Mono,monospace" font-size="10">→ plan.md</text>
+        <text x="237" y="290" text-anchor="middle" fill="#3a4550" font-family="JetBrains Mono,monospace" font-size="10">/clear</text>
+        <!-- Arrow -->
+        <text x="312" y="250" text-anchor="middle" fill="#3a4550" font-size="24">→</text>
+        <!-- Phase 3: Implement -->
+        <rect x="330" y="154" width="105" height="188" rx="10" fill="#141920" stroke="rgba(103,168,112,.2)" stroke-width="1"/>
+        <text x="382" y="174" text-anchor="middle" fill="#67a870" font-family="Ubuntu,sans-serif" font-weight="600" font-size="12">IMPLEMENT</text>
+        <rect x="342" y="182" width="82" height="14" rx="4" fill="rgba(103,168,112,.25)"/>
+        <rect x="342" y="200" width="70" height="14" rx="4" fill="rgba(103,168,112,.2)"/>
+        <rect x="342" y="218" width="76" height="14" rx="4" fill="rgba(103,168,112,.15)"/>
+        <text x="382" y="272" text-anchor="middle" fill="#67a870" font-family="JetBrains Mono,monospace" font-size="10">→ commits</text>
+        <text x="382" y="290" text-anchor="middle" fill="#3a4550" font-family="JetBrains Mono,monospace" font-size="10">/clear</text>
+        <!-- Small context bars showing they stay small -->
+        <text x="92" y="358" text-anchor="middle" fill="#3a4550" font-family="Ubuntu,sans-serif" font-size="10">20% used</text>
+        <text x="237" y="358" text-anchor="middle" fill="#3a4550" font-family="Ubuntu,sans-serif" font-size="10">25% used</text>
+        <text x="382" y="358" text-anchor="middle" fill="#3a4550" font-family="Ubuntu,sans-serif" font-size="10">30% used</text>
+        <rect x="55" y="338" width="76" height="8" rx="3" fill="#141920" stroke="rgba(255,255,255,.07)"/>
+        <rect x="55" y="338" width="16" height="8" rx="3" fill="rgba(65,155,215,.4)"/>
+        <rect x="200" y="338" width="76" height="8" rx="3" fill="#141920" stroke="rgba(255,255,255,.07)"/>
+        <rect x="200" y="338" width="20" height="8" rx="3" fill="rgba(229,162,62,.4)"/>
+        <rect x="345" y="338" width="76" height="8" rx="3" fill="#141920" stroke="rgba(255,255,255,.07)"/>
+        <rect x="345" y="338" width="24" height="8" rx="3" fill="rgba(103,168,112,.4)"/>
+      </svg>
+    </div>
+  </div>
+</div>

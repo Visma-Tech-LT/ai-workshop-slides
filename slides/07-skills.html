@@ -1,0 +1,73 @@
+<!-- ════════════════════════════════════════
+     4 — SKILLS (visual metaphor)
+════════════════════════════════════════ -->
+<div class="slide" data-i="4">
+  <div class="split">
+    <div class="split-l">
+      <div class="dot-grid"></div>
+      <div class="section-num">02</div>
+      <div style="position:relative;z-index:1">
+        <div class="eyebrow eyebrow-green">03 · Skills</div>
+        <h2>Reusable<br><span class="accent">Workflows</span></h2>
+        <p class="body-md">A skill is a markdown file that teaches the agent a new trick. Invoke with <code>/skill-name</code> or let the agent auto-detect.</p>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
+          <div class="card" style="padding:18px 22px">
+            <div style="font-size:13px;color:var(--muted);margin-bottom:6px;font-family:var(--f-mono)">CLAUDE CODE</div>
+            <code>.claude/skills/name/SKILL.md</code>
+          </div>
+          <div class="card" style="padding:18px 22px">
+            <div style="font-size:13px;color:var(--muted);margin-bottom:6px;font-family:var(--f-mono)">COPILOT CLI</div>
+            <code>.github/skills/name.md</code>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="split-r" style="display:flex;flex-direction:column;gap:16px;justify-content:center">
+      <!-- SKILLS DIAGRAM: Swiss Army Knife metaphor (compact) -->
+      <svg viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;flex-shrink:0">
+        <circle cx="260" cy="110" r="48" fill="#141920" stroke="rgba(103,168,112,.35)" stroke-width="1.5"/>
+        <text x="260" y="106" text-anchor="middle" fill="#67a870" font-family="Ubuntu,sans-serif" font-weight="700" font-size="13">AGENT</text>
+        <text x="260" y="122" text-anchor="middle" fill="#6a7a88" font-family="Ubuntu,sans-serif" font-size="11">skills loaded</text>
+        <circle cx="260" cy="110" r="62" fill="none" stroke="rgba(103,168,112,.08)" stroke-width="10"/>
+        <!-- /new-component top -->
+        <line x1="260" y1="62" x2="260" y2="34" stroke="rgba(103,168,112,.2)" stroke-width="1" stroke-dasharray="4 3"/>
+        <rect x="178" y="8" width="164" height="34" rx="8" fill="#1c232c" stroke="rgba(103,168,112,.3)" stroke-width="1"/>
+        <text x="260" y="30" text-anchor="middle" fill="#67a870" font-family="JetBrains Mono,monospace" font-size="11" font-weight="600">/new-angular-component</text>
+        <!-- /ux-review right -->
+        <line x1="307" y1="88" x2="340" y2="66" stroke="rgba(65,155,215,.2)" stroke-width="1" stroke-dasharray="4 3"/>
+        <rect x="338" y="44" width="152" height="34" rx="8" fill="#1c232c" stroke="rgba(65,155,215,.3)" stroke-width="1"/>
+        <text x="414" y="66" text-anchor="middle" fill="#419bd7" font-family="JetBrains Mono,monospace" font-size="11" font-weight="600">/ux-review</text>
+        <!-- /accessibility-audit right-bottom -->
+        <line x1="308" y1="132" x2="340" y2="154" stroke="rgba(229,162,62,.2)" stroke-width="1" stroke-dasharray="4 3"/>
+        <rect x="326" y="142" width="178" height="34" rx="8" fill="#1c232c" stroke="rgba(229,162,62,.3)" stroke-width="1"/>
+        <text x="415" y="164" text-anchor="middle" fill="#e5a23e" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600">/accessibility-audit</text>
+        <!-- /write-tests bottom -->
+        <line x1="260" y1="158" x2="260" y2="182" stroke="rgba(219,107,125,.2)" stroke-width="1" stroke-dasharray="4 3"/>
+        <rect x="186" y="180" width="148" height="34" rx="8" fill="#1c232c" stroke="rgba(219,107,125,.3)" stroke-width="1"/>
+        <text x="260" y="202" text-anchor="middle" fill="#db6b7d" font-family="JetBrains Mono,monospace" font-size="11" font-weight="600">/write-tests</text>
+        <!-- /design-tokens left-bottom -->
+        <line x1="212" y1="132" x2="180" y2="154" stroke="rgba(138,128,189,.2)" stroke-width="1" stroke-dasharray="4 3"/>
+        <rect x="10" y="142" width="154" height="34" rx="8" fill="#1c232c" stroke="rgba(138,128,189,.3)" stroke-width="1"/>
+        <text x="87" y="164" text-anchor="middle" fill="#8a80bd" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600">/design-tokens</text>
+        <!-- /refactor-css left-top -->
+        <line x1="213" y1="88" x2="180" y2="66" stroke="rgba(219,107,125,.2)" stroke-width="1" stroke-dasharray="4 3"/>
+        <rect x="10" y="44" width="154" height="34" rx="8" fill="#1c232c" stroke="rgba(219,107,125,.3)" stroke-width="1"/>
+        <text x="87" y="66" text-anchor="middle" fill="#db6b7d" font-family="JetBrains Mono,monospace" font-size="11" font-weight="600">/refactor-css</text>
+      </svg>
+      <div class="code-block">
+        <div class="code-label">.claude/skills/new-angular-component/SKILL.md</div>
+        <pre><span class="p">---</span>
+<span class="n">name</span><span class="p">:</span> <span class="s">new-angular-component</span>
+<span class="n">description</span><span class="p">:</span> <span class="s">Scaffold an Angular component with VUD
+  design tokens, tests and Storybook story</span>
+<span class="n">allowed-tools</span><span class="p">:</span> <span class="s">Read, Edit, Bash, Glob</span>
+<span class="p">---</span>
+<span class="cm">## Workflow</span>
+<span class="s">1. Read existing components for conventions
+2. Generate component, spec and story files
+3. Run ng test to confirm passing</span></pre>
+      </div>
+    </div>
+  </div>
+</div>

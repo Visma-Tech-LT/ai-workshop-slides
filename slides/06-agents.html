@@ -1,0 +1,69 @@
+<!-- ════════════════════════════════════════
+     7 — AGENTS
+════════════════════════════════════════ -->
+<div class="slide" data-i="7">
+  <div class="split">
+    <div class="split-l">
+      <div class="dot-grid"></div>
+      <div class="section-num">02</div>
+      <div style="position:relative;z-index:1">
+        <div class="eyebrow eyebrow-green">02 · Agents</div>
+        <h2>What is an<br><span class="accent">Agent?</span></h2>
+        <p class="body-md" style="margin-bottom:28px">A sub-agent is Claude running in its own isolated context — with its own instructions, its own set of allowed tools, and a focused job to do. It can't accidentally mess up your main session.</p>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="card" style="padding:16px 22px">
+            <div style="font-size:12px;font-family:var(--f-mono);color:var(--muted);margin-bottom:6px;letter-spacing:.08em">CLAUDE CODE</div>
+            <code>.claude/agents/name.md</code>
+          </div>
+          <div class="card" style="padding:16px 22px">
+            <div style="font-size:12px;font-family:var(--f-mono);color:var(--muted);margin-bottom:6px;letter-spacing:.08em">COPILOT CLI</div>
+            <code>.github/agents/name.agent.md</code>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="split-r" style="display:flex;flex-direction:column;gap:16px;justify-content:center">
+      <!-- Agent anatomy diagram: one agent, what's inside it -->
+      <svg viewBox="0 0 460 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:440px;flex-shrink:0">
+        <!-- Outer border — the agent's isolated bubble -->
+        <rect x="30" y="24" width="400" height="222" rx="20" fill="rgba(103,168,112,.04)" stroke="rgba(103,168,112,.3)" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <text x="230" y="16" text-anchor="middle" fill="#67a870" font-family="Ubuntu,sans-serif" font-weight="700" font-size="12" letter-spacing="2">ISOLATED CONTEXT</text>
+        <!-- 1. Instructions -->
+        <rect x="52" y="42" width="172" height="72" rx="12" fill="#141920" stroke="rgba(65,155,215,.3)" stroke-width="1"/>
+        <text x="138" y="64" text-anchor="middle" fill="#419bd7" font-family="Ubuntu,sans-serif" font-weight="700" font-size="13">Instructions</text>
+        <text x="138" y="82" text-anchor="middle" fill="#6a7a88" font-family="Ubuntu,sans-serif" font-size="11">What is this agent's job?</text>
+        <text x="138" y="100" text-anchor="middle" fill="#3a4550" font-family="JetBrains Mono,monospace" font-size="10">name · description · rules</text>
+        <!-- 2. Allowed tools -->
+        <rect x="236" y="42" width="172" height="72" rx="12" fill="#141920" stroke="rgba(229,162,62,.3)" stroke-width="1"/>
+        <text x="322" y="64" text-anchor="middle" fill="#e5a23e" font-family="Ubuntu,sans-serif" font-weight="700" font-size="13">Allowed Tools</text>
+        <text x="322" y="82" text-anchor="middle" fill="#6a7a88" font-family="Ubuntu,sans-serif" font-size="11">What can it touch?</text>
+        <text x="322" y="100" text-anchor="middle" fill="#3a4550" font-family="JetBrains Mono,monospace" font-size="10">Read · Bash · Edit · Glob</text>
+        <!-- 3. Fresh context window -->
+        <rect x="52" y="128" width="356" height="54" rx="12" fill="#141920" stroke="rgba(138,128,189,.3)" stroke-width="1"/>
+        <text x="230" y="152" text-anchor="middle" fill="#8a80bd" font-family="Ubuntu,sans-serif" font-weight="700" font-size="13">Fresh Context Window</text>
+        <text x="230" y="170" text-anchor="middle" fill="#6a7a88" font-family="Ubuntu,sans-serif" font-size="11">Starts empty — no memory of your main session</text>
+        <!-- Arrow + output -->
+        <line x1="230" y1="182" x2="230" y2="210" stroke="rgba(103,168,112,.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <polygon points="230,218 224,206 236,206" fill="rgba(103,168,112,.5)"/>
+        <rect x="110" y="220" width="240" height="18" rx="6" fill="rgba(103,168,112,.07)" stroke="rgba(103,168,112,.2)" stroke-width="1"/>
+        <text x="230" y="233" text-anchor="middle" fill="#67a870" font-family="JetBrains Mono,monospace" font-size="10">→ research.md · review.md · commits</text>
+      </svg>
+      <div class="code-block">
+        <div class="code-label">.claude/agents/frontend-dev.md</div>
+        <pre><span class="p">---</span>
+<span class="n">name</span><span class="p">:</span> <span class="s">frontend-dev</span>
+<span class="n">description</span><span class="p">:</span> <span class="s">Builds Angular components following
+  the project design system and UX guidelines</span>
+<span class="n">tools</span><span class="p">:</span> <span class="s">Read, Edit, Bash, Glob</span>
+<span class="p">---</span>
+You are a frontend specialist. Follow the
+Visma Design System and Angular best practices.
+<span class="c"># Rules</span>
+<span class="s">- Use VUD tokens, never raw hex colours
+- Components must pass axe accessibility audit
+- Write unit tests with Angular Testing Library</span></pre>
+      </div>
+    </div>
+  </div>
+</div>

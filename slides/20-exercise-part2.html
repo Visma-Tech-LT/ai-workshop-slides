@@ -1,0 +1,61 @@
+<!-- ════════════════════════════════════════
+     17 — PART 2 EXERCISE
+════════════════════════════════════════ -->
+<div class="slide" id="slide-exercise-basic" data-i="17">
+  <div class="split">
+    <div class="split-l">
+      <div class="dot-grid"></div>
+      <div style="position:relative;z-index:1">
+        <div class="eyebrow eyebrow-blue" style="margin-bottom:20px">Part 2 · Exercise · 13:30</div>
+        <h2>Build a <span class="blue">Logstick Feature</span></h2>
+        <p class="body-md" style="margin-bottom:20px">Pick a feature. Use the prebuilt workflow — compare how far you get vs Part 1.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px">
+          <span class="chip chip-blue">Natural language time entry</span>
+          <span class="chip chip-blue">Weekly summary view</span>
+          <span class="chip chip-blue">Prefill from last week</span>
+          <span class="chip">…your own idea</span>
+        </div>
+        <div class="code-block">
+          <div class="code-label">Install the workflow plugin first</div>
+          <pre style="font-size:13px"><span class="v">/plugin</span> marketplace add <span class="s">github:Visma-Tech-LT/ai-workshop-marketplace</span>
+<span class="v">/plugin</span> install <span class="s">sdw@ai-workshop</span></pre>
+        </div>
+        <a href="https://github.com/Visma-Tech-LT/ai-workshop-marketplace" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-family:var(--f-mono);font-size:13px;color:var(--blue);text-decoration:none;opacity:.8;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.8'">
+          🐙 github.com/Visma-Tech-LT/ai-workshop-marketplace
+        </a>
+        <div class="card" style="margin-top:14px;border-color:rgba(103,168,112,.25);background:rgba(103,168,112,.05);padding:14px 20px">
+          <p class="body-sm"><strong style="color:var(--green)">Reflect:</strong> How much faster vs Part 1? What did the structure give you that winging it didn't?</p>
+        </div>
+      </div>
+    </div>
+    <div class="split-r" style="display:flex;flex-direction:column;gap:10px;justify-content:center">
+      <div class="wf" style="gap:6px;flex-wrap:wrap;margin-bottom:4px">
+        <div class="wf-box blue">1. Research</div><div class="wf-arrow">→</div>
+        <div class="wf-box orange">2. Plan</div><div class="wf-arrow">→</div>
+        <div class="wf-box green">3. Implement</div><div class="wf-arrow">→</div>
+        <div class="wf-box red">4. Review</div>
+      </div>
+      <div class="card" style="padding:16px 20px;border-color:rgba(65,155,215,.2)">
+        <div style="font-size:11px;font-family:var(--f-mono);color:var(--blue);margin-bottom:8px;letter-spacing:.08em">1. RESEARCH</div>
+        <code style="font-size:14px">/sdw:research-codebase</code>
+        <p class="body-sm" style="margin-top:6px">Tell Claude what you want to build. Review <code>.claude/ai/research-*.md</code>. Then <code>/clear</code>.</p>
+      </div>
+      <div class="card" style="padding:16px 20px;border-color:rgba(229,162,62,.2)">
+        <div style="font-size:11px;font-family:var(--f-mono);color:var(--orange);margin-bottom:8px;letter-spacing:.08em">2. PLAN</div>
+        <code style="font-size:14px">/sdw:create-plan @.claude/ai/research-*.md</code>
+        <p class="body-sm" style="margin-top:6px">Interactive. Review <code>plan-*.md</code>. Then <code>/clear</code>.</p>
+      </div>
+      <div class="card" style="padding:16px 20px;border-color:rgba(103,168,112,.2)">
+        <div style="font-size:11px;font-family:var(--f-mono);color:var(--green);margin-bottom:8px;letter-spacing:.08em">3. IMPLEMENT</div>
+        <code style="font-size:14px">/sdw:implement-plan @.claude/ai/plan-*.md</code>
+        <p class="body-sm" style="margin-top:6px">Phase by phase. Reset context between phases.</p>
+      </div>
+      <div class="card" style="padding:16px 20px;border-color:rgba(219,107,125,.2)">
+        <div style="font-size:11px;font-family:var(--f-mono);color:var(--red);margin-bottom:8px;letter-spacing:.08em">4. REVIEW</div>
+        <code style="font-size:14px">/sdw:code-review</code>
+        <p class="body-sm" style="margin-top:6px">Runs tests, checks quality. Outputs <code>review-*.md</code>.</p>
+      </div>
+      <button onclick="goToId('slide-exercise-advanced')" style="align-self:flex-end;padding:12px 22px;background:rgba(138,128,189,.12);border:1px solid rgba(138,128,189,.4);border-radius:12px;color:var(--purple);font-family:var(--f-mono);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap" onmouseover="this.style.background='rgba(138,128,189,.22)'" onmouseout="this.style.background='rgba(138,128,189,.12)'">⚡ Advanced + Skeptic Gate →</button>
+    </div>
+  </div>
+</div>

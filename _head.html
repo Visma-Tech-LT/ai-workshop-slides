@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Engineering Workshop — Visma 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green:#67a870; --green-dim:#2d7048; --green-glow:rgba(103,168,112,.18);
+  --blue:#419bd7; --blue-dim:#0d5788;
+  --orange:#e5a23e; --orange-dim:#b35300;
+  --red:#db6b7d; --red-dim:#a12036;
+  --purple:#8a80bd;
+  --bg:#0c0f12; --surface:#141920; --surface2:#1c232c;
+  --border:rgba(255,255,255,.07);
+  --text:#e8edf2; --muted:#6a7a88; --faint:#3a4550;
+  --accent:var(--green);
+  --f-head:'Ubuntu',sans-serif;
+  --f-mono:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100vw;height:100vh;overflow:hidden;background:var(--bg);color:var(--text);font-family:var(--f-head)}
+
+/* ── ENGINE ── */
+.deck{position:relative;width:100vw;height:100vh}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .35s cubic-bezier(.4,0,.2,1),transform .35s cubic-bezier(.4,0,.2,1);transform:translateX(28px)}
+.slide.active{opacity:1;visibility:visible;transform:none}
+.slide.prev{transform:translateX(-28px)}
+
+/* ── CHROME ── */
+.progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--green-dim),var(--green));box-shadow:0 0 10px var(--green-glow);transition:width .4s ease;z-index:200}
+.wordmark{position:fixed;top:22px;left:36px;z-index:100;display:flex;align-items:center;gap:10px;opacity:.4}
+.wordmark-dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.wordmark-text{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text)}
+.nav{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:100;display:flex;align-items:center;background:rgba(12,15,18,.9);backdrop-filter:blur(20px);border:1px solid var(--border);border-radius:40px;padding:6px 8px;gap:0}
+.nav-btn{width:40px;height:40px;border-radius:30px;border:none;background:transparent;color:var(--muted);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .18s;font-family:var(--f-head);font-weight:700}
+.nav-btn:hover{background:rgba(255,255,255,.06);color:var(--text)}
+.nav-btn:active{background:var(--green-glow);color:var(--green)}
+.nav-counter{font-family:var(--f-mono);font-size:11px;color:var(--faint);padding:0 16px;min-width:68px;text-align:center;letter-spacing:.05em}
+.slide-num{position:fixed;top:22px;right:36px;z-index:100;font-family:var(--f-mono);font-size:11px;color:var(--faint);letter-spacing:.08em}
+
+/* ── LAYOUT ATOMS ── */
+.center{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%;padding:60px 80px;position:relative}
+.left{display:flex;flex-direction:column;justify-content:center;height:100%;padding:72px 100px;position:relative;overflow:hidden}
+.split{display:flex;height:100%}
+.split-l{width:46%;display:flex;flex-direction:column;justify-content:center;padding:72px 72px;border-right:1px solid var(--border);position:relative;overflow:hidden}
+.split-r{flex:1;display:flex;flex-direction:column;justify-content:center;padding:72px 72px;overflow:hidden}
+
+/* ── TYPOGRAPHY SCALE (TV-optimised) ── */
+.eyebrow{font-family:var(--f-mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.eyebrow-green{color:var(--green)}
+.eyebrow-blue{color:var(--blue)}
+.eyebrow-orange{color:var(--orange)}
+.eyebrow-red{color:var(--red)}
+h1{font-size:clamp(64px,7.5vw,96px);font-weight:900;line-height:1.02;letter-spacing:-.03em}
+h2{font-size:clamp(44px,5vw,64px);font-weight:700;line-height:1.06;letter-spacing:-.02em;margin-bottom:28px}
+h3{font-size:clamp(22px,2.4vw,30px);font-weight:600;line-height:1.2;letter-spacing:-.01em}
+.body-lg{font-size:clamp(20px,2vw,26px);line-height:1.55;color:var(--muted);font-weight:400}
+.body-md{font-size:clamp(17px,1.7vw,22px);line-height:1.6;color:var(--muted)}
+.body-sm{font-size:clamp(15px,1.4vw,18px);line-height:1.6;color:var(--muted)}
+.accent{color:var(--green)}
+.blue{color:var(--blue)}
+.orange{color:var(--orange)}
+.red{color:var(--red)}
+.dim{color:var(--muted)}
+
+code,.mono{font-family:var(--f-mono);font-size:.9em;color:var(--green);background:rgba(103,168,112,.1);padding:2px 7px;border-radius:4px}
+
+/* ── CARDS ── */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px 32px;transition:border-color .2s}
+.card-grid{display:grid;gap:16px}
+.card-grid.cols2{grid-template-columns:1fr 1fr}
+.card-grid.cols3{grid-template-columns:1fr 1fr 1fr}
+
+/* ── CHIP ── */
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:500;font-family:var(--f-mono);border:1px solid var(--border)}
+.chip-green{color:var(--green);background:rgba(103,168,112,.1);border-color:rgba(103,168,112,.3)}
+.chip-blue{color:var(--blue);background:rgba(65,155,215,.1);border-color:rgba(65,155,215,.3)}
+.chip-orange{color:var(--orange);background:rgba(229,162,62,.1);border-color:rgba(229,162,62,.3)}
+.chip-red{color:var(--red);background:rgba(219,107,125,.1);border-color:rgba(219,107,125,.3)}
+.chip-purple{color:var(--purple);background:rgba(138,128,189,.1);border-color:rgba(138,128,189,.3)}
+
+/* ── QUOTE SLIDE ── */
+.quote-mark{font-size:120px;line-height:.6;color:var(--green);font-weight:900;margin-bottom:16px;opacity:.4}
+.quote-text{font-size:clamp(26px,3vw,38px);line-height:1.4;font-weight:400;max-width:900px;color:var(--text)}
+.quote-attr{font-size:16px;color:var(--muted);margin-top:28px;font-family:var(--f-mono);letter-spacing:.05em}
+
+/* ── WORKFLOW STEPS ── */
+.wf{display:flex;align-items:center;gap:0;flex-wrap:wrap}
+.wf-box{padding:14px 24px;border-radius:12px;font-family:var(--f-mono);font-size:15px;font-weight:600;border:1px solid var(--border);background:var(--surface);white-space:nowrap}
+.wf-arrow{color:var(--faint);font-size:22px;padding:0 6px}
+.wf-box.blue{border-color:rgba(65,155,215,.4);background:rgba(65,155,215,.08);color:var(--blue)}
+.wf-box.orange{border-color:rgba(229,162,62,.4);background:rgba(229,162,62,.08);color:var(--orange)}
+.wf-box.green{border-color:rgba(103,168,112,.4);background:rgba(103,168,112,.08);color:var(--green)}
+.wf-box.red{border-color:rgba(219,107,125,.4);background:rgba(219,107,125,.08);color:var(--red)}
+.wf-box.purple{border-color:rgba(138,128,189,.4);background:rgba(138,128,189,.08);color:var(--purple)}
+
+/* ── CODE ── */
+.code-block{background:#06080a;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.code-label{font-family:var(--f-mono);font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;padding:10px 18px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.02)}
+pre{padding:20px 22px;font-family:var(--f-mono);font-size:15px;line-height:1.75;overflow-x:auto}
+.k{color:var(--purple)}.s{color:#9fd49f}.c{color:#3d4f5e;font-style:italic}
+.n{color:var(--blue)}.v{color:var(--orange)}.cm{color:var(--green);font-weight:600}
+
+/* ── BACKGROUNDS ── */
+.dot-grid{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.035) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.bg-glow-green{position:absolute;top:-20%;right:-10%;width:55%;aspect-ratio:1;background:radial-gradient(circle,rgba(103,168,112,.07) 0%,transparent 65%);pointer-events:none}
+.bg-glow-blue{position:absolute;bottom:-20%;left:-10%;width:55%;aspect-ratio:1;background:radial-gradient(circle,rgba(65,155,215,.06) 0%,transparent 65%);pointer-events:none}
+.section-num{position:absolute;right:-20px;bottom:-20px;font-size:clamp(130px,18vw,220px);font-weight:900;color:rgba(255,255,255,.025);line-height:1;pointer-events:none;user-select:none;letter-spacing:-.04em}
+
+/* ── AGENDA ── */
+.agenda-row{display:flex;align-items:flex-start;gap:24px;padding:16px 0;border-bottom:1px solid var(--border)}
+.agenda-row:last-child{border-bottom:none}
+.agenda-time{font-family:var(--f-mono);font-size:15px;color:var(--green);width:70px;flex-shrink:0;padding-top:3px}
+.agenda-title{font-size:20px;font-weight:600;color:var(--text);margin-bottom:4px}
+.agenda-desc{font-size:15px;color:var(--muted)}
+
+/* ── SECTION DIVIDER ── */
+.divider-slide .center{gap:20px}
+
+/* ── BIG STAT ── */
+.big-stat{font-size:clamp(80px,10vw,130px);font-weight:900;line-height:1;letter-spacing:-.04em}
+
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="wordmark"><div class="wordmark-dot"></div><span class="wordmark-text">Visma</span></div>
+<div class="slide-num" id="slideNum"></div>
+<div class="deck" id="deck">
