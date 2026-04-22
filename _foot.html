@@ -1,5 +1,8 @@
 </div><!-- /deck -->
 
+<!-- ── Code expand backdrop ── -->
+<div class="code-backdrop" id="codeBackdrop"></div>
+
 <!-- ── Navigation ── -->
 <div class="nav">
   <button class="nav-btn" id="prevBtn" onclick="go(-1)">&#8592;</button>
@@ -40,7 +43,32 @@ function goToId(id){
   const idx=Array.from(slides).indexOf(el);
   if(idx>=0){cur=idx;show(cur)}
 }
+function closeExpanded(){
+  document.querySelectorAll('.code-block.is-expanded').forEach(b=>b.classList.remove('is-expanded'));
+  document.getElementById('codeBackdrop').classList.remove('is-active');
+  document.querySelectorAll('.code-expand-btn').forEach(b=>b.innerHTML='&#x2922;');
+}
+document.addEventListener('click',e=>{
+  const btn=e.target.closest('.code-expand-btn');
+  if(btn){
+    e.stopPropagation();
+    const block=btn.closest('.code-block');
+    const expanding=!block.classList.contains('is-expanded');
+    closeExpanded();
+    if(expanding){
+      block.classList.add('is-expanded');
+      document.getElementById('codeBackdrop').classList.add('is-active');
+      btn.innerHTML='&times;';
+    }
+    return;
+  }
+  if(e.target.closest('.code-backdrop'))closeExpanded();
+});
 document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    if(document.querySelector('.code-block.is-expanded')){e.preventDefault();closeExpanded();return}
+  }
+  if(document.querySelector('.code-block.is-expanded'))return;
   if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();go(1)}
   if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}
   if(e.key==='Home'){e.preventDefault();cur=0;show(0)}
