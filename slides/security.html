@@ -2,34 +2,42 @@
      9 — SECURITY (what never goes in context)
 ════════════════════════════════════════ -->
 <div class="slide" data-i="9">
-  <div class="left">
-    <div class="eyebrow eyebrow-red">07 · Security</div>
-    <h2>What <span class="red">Never</span> Goes in Context</h2>
-    <p class="body-md" style="margin-bottom:40px;max-width:700px">Anyone who can inject tokens into context gains control of your agent. Treat context like a public API.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:900px">
-      <div class="card" style="background:#1a0808;border-color:#3a1010;padding:22px 26px">
-        <div style="font-size:26px;margin-bottom:10px">🔑</div>
-        <h3 style="color:var(--red);margin-bottom:8px;font-size:18px">API Keys & Tokens</h3>
-        <p class="body-sm"><code>sk-*</code> · <code>ghp_*</code> · <code>AKIA*</code><br>Use env vars instead.</p>
-      </div>
-      <div class="card" style="background:#1a0808;border-color:#3a1010;padding:22px 26px">
-        <div style="font-size:26px;margin-bottom:10px">🔐</div>
-        <h3 style="color:var(--red);margin-bottom:8px;font-size:18px">Private Keys & Certs</h3>
-        <p class="body-sm">SSH · TLS · PGP<br>Never read <code>~/.ssh/</code></p>
-      </div>
-      <div class="card" style="background:#1a0808;border-color:#3a1010;padding:22px 26px">
-        <div style="font-size:26px;margin-bottom:10px">🗄️</div>
-        <h3 style="color:var(--red);margin-bottom:8px;font-size:18px">DB Credentials</h3>
-        <p class="body-sm">Connection strings · passwords<br>Use Vault or env vars.</p>
-      </div>
-      <div class="card" style="background:#1a0808;border-color:#3a1010;padding:22px 26px">
-        <div style="font-size:26px;margin-bottom:10px">👤</div>
-        <h3 style="color:var(--red);margin-bottom:8px;font-size:18px">PII & Health Data</h3>
-        <p class="body-sm">Anonymize before passing<br>to any agent or model.</p>
+  <div class="split">
+    <div class="split-l">
+      <div class="dot-grid"></div>
+      <div class="section-num">06</div>
+      <div style="position:relative;z-index:1">
+        <div class="eyebrow eyebrow-red">06 · Security</div>
+        <h2>What <span class="red">Never</span><br>Goes in Context</h2>
+        <p class="body-md" style="margin-bottom:28px">Anyone who can inject tokens into context gains control of your agent. Treat context like a public API.</p>
+        <div class="card" style="border-color:rgba(103,168,112,.25);background:rgba(103,168,112,.05);padding:18px 24px">
+          <p class="body-sm"><strong style="color:var(--green)">Deny always wins.</strong> Even hooks returning "allow" cannot override deny rules.</p>
+        </div>
       </div>
     </div>
-    <div class="card" style="margin-top:20px;max-width:900px;border-color:rgba(103,168,112,.25);background:rgba(103,168,112,.05);padding:18px 24px">
-      <p class="body-sm"><strong style="color:var(--green)">Deny always wins.</strong> Even hooks returning "allow" cannot override deny rules.</p>
+    <div class="split-r" style="display:flex;flex-direction:column;gap:14px;justify-content:center">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div class="card" style="background:#1a0808;border-color:#3a1010;padding:22px 26px">
+          <div style="font-size:26px;margin-bottom:10px">🔑</div>
+          <h3 style="color:var(--red);margin-bottom:8px;font-size:18px">API Keys & Tokens</h3>
+          <p class="body-sm"><code>sk-*</code> · <code>ghp_*</code> · <code>AKIA*</code><br>Use env vars instead.</p>
+        </div>
+        <div class="card" style="background:#1a0808;border-color:#3a1010;padding:22px 26px">
+          <div style="font-size:26px;margin-bottom:10px">🔐</div>
+          <h3 style="color:var(--red);margin-bottom:8px;font-size:18px">Private Keys & Certs</h3>
+          <p class="body-sm">SSH · TLS · PGP<br>Never read <code>~/.ssh/</code></p>
+        </div>
+        <div class="card" style="background:#1a0808;border-color:#3a1010;padding:22px 26px">
+          <div style="font-size:26px;margin-bottom:10px">🗄️</div>
+          <h3 style="color:var(--red);margin-bottom:8px;font-size:18px">DB Credentials</h3>
+          <p class="body-sm">Connection strings · passwords<br>Use Vault or env vars.</p>
+        </div>
+        <div class="card" style="background:#1a0808;border-color:#3a1010;padding:22px 26px">
+          <div style="font-size:26px;margin-bottom:10px">👤</div>
+          <h3 style="color:var(--red);margin-bottom:8px;font-size:18px">PII & Health Data</h3>
+          <p class="body-sm">Anonymize before passing<br>to any agent or model.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

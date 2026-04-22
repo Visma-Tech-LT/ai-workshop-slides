@@ -5,7 +5,7 @@
   <div class="split">
     <div class="split-l">
       <div class="dot-grid"></div>
-      <div class="section-num">02</div>
+      <div class="section-num">03</div>
       <div style="position:relative;z-index:1">
         <div class="eyebrow eyebrow-green">03 · Skills</div>
         <h2>Reusable<br><span class="accent">Workflows</span></h2>
@@ -25,7 +25,7 @@
     </div>
     <div class="split-r" style="display:flex;flex-direction:column;gap:16px;justify-content:center">
       <!-- SKILLS DIAGRAM: Swiss Army Knife metaphor (compact) -->
-      <svg viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;flex-shrink:0">
+      <svg viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;flex-shrink:0;align-self:center">
         <circle cx="260" cy="110" r="48" fill="#141920" stroke="rgba(103,168,112,.35)" stroke-width="1.5"/>
         <text x="260" y="106" text-anchor="middle" fill="#67a870" font-family="Ubuntu,sans-serif" font-weight="700" font-size="13">AGENT</text>
         <text x="260" y="122" text-anchor="middle" fill="#6a7a88" font-family="Ubuntu,sans-serif" font-size="11">skills loaded</text>
@@ -56,17 +56,110 @@
         <text x="87" y="66" text-anchor="middle" fill="#db6b7d" font-family="JetBrains Mono,monospace" font-size="11" font-weight="600">/refactor-css</text>
       </svg>
       <div class="code-block">
-        <div class="code-label">.claude/skills/new-angular-component/SKILL.md</div>
-        <pre><span class="p">---</span>
-<span class="n">name</span><span class="p">:</span> <span class="s">new-angular-component</span>
-<span class="n">description</span><span class="p">:</span> <span class="s">Scaffold an Angular component with VUD
-  design tokens, tests and Storybook story</span>
-<span class="n">allowed-tools</span><span class="p">:</span> <span class="s">Read, Edit, Bash, Glob</span>
+        <div class="code-label">.claude/skills/frontend-design/SKILL.md</div>
+        <button class="code-expand-btn" title="Expand" aria-label="Expand code">&#x2922;</button>
+        <pre style="max-height:240px;overflow-y:auto"><span class="p">---</span>
+<span class="n">name</span><span class="p">:</span> <span class="s">frontend-design</span>
+<span class="n">description</span><span class="p">:</span> <span class="s">Create distinctive, production-grade
+  frontend interfaces with high design quality. Use this
+  skill when the user asks to build web components, pages,
+  artifacts, posters, or applications (websites, landing
+  pages, dashboards, React components, HTML/CSS layouts,
+  or when styling/beautifying any web UI). Generates
+  creative, polished code and UI design that avoids
+  generic AI aesthetics.</span>
+<span class="n">license</span><span class="p">:</span> <span class="s">Complete terms in LICENSE.txt</span>
 <span class="p">---</span>
-<span class="cm">## Workflow</span>
-<span class="s">1. Read existing components for conventions
-2. Generate component, spec and story files
-3. Run ng test to confirm passing</span></pre>
+This skill guides creation of distinctive, production-grade
+frontend interfaces that avoid generic "AI slop" aesthetics.
+Implement real working code with exceptional attention to
+aesthetic details and creative choices.
+
+The user provides frontend requirements: a component, page,
+application, or interface to build. They may include context
+about the purpose, audience, or technical constraints.
+
+<span class="cm">## Design Thinking</span>
+
+Before coding, understand the context and commit to a BOLD
+aesthetic direction:
+<span class="c">-</span> <span class="k">Purpose</span>: What problem does this interface solve?
+  Who uses it?
+<span class="c">-</span> <span class="k">Tone</span>: Pick an extreme: brutally minimal, maximalist
+  chaos, retro-futuristic, organic/natural, luxury/refined,
+  playful/toy-like, editorial/magazine, brutalist/raw, art
+  deco/geometric, soft/pastel, industrial/utilitarian, etc.
+  There are so many flavors to choose from. Use these for
+  inspiration but design one that is true to the aesthetic
+  direction.
+<span class="c">-</span> <span class="k">Constraints</span>: Technical requirements (framework,
+  performance, accessibility).
+<span class="c">-</span> <span class="k">Differentiation</span>: What makes this UNFORGETTABLE?
+  What's the one thing someone will remember?
+
+<span class="v">CRITICAL</span>: Choose a clear conceptual direction and execute
+it with precision. Bold maximalism and refined minimalism
+both work — the key is intentionality, not intensity.
+
+Then implement working code (HTML/CSS/JS, React, Vue, etc.)
+that is:
+<span class="c">-</span> Production-grade and functional
+<span class="c">-</span> Visually striking and memorable
+<span class="c">-</span> Cohesive with a clear aesthetic point-of-view
+<span class="c">-</span> Meticulously refined in every detail
+
+<span class="cm">## Frontend Aesthetics Guidelines</span>
+
+Focus on:
+<span class="c">-</span> <span class="k">Typography</span>: Choose fonts that are beautiful, unique,
+  and interesting. Avoid generic fonts like Arial and Inter;
+  opt instead for distinctive choices that elevate the
+  frontend's aesthetics; unexpected, characterful font
+  choices. Pair a distinctive display font with a refined
+  body font.
+<span class="c">-</span> <span class="k">Color &amp; Theme</span>: Commit to a cohesive aesthetic. Use
+  CSS variables for consistency. Dominant colors with sharp
+  accents outperform timid, evenly-distributed palettes.
+<span class="c">-</span> <span class="k">Motion</span>: Use animations for effects and micro-
+  interactions. Prioritize CSS-only solutions for HTML. Use
+  Motion library for React when available. Focus on high-
+  impact moments: one well-orchestrated page load with
+  staggered reveals (animation-delay) creates more delight
+  than scattered micro-interactions. Use scroll-triggering
+  and hover states that surprise.
+<span class="c">-</span> <span class="k">Spatial Composition</span>: Unexpected layouts. Asymmetry.
+  Overlap. Diagonal flow. Grid-breaking elements. Generous
+  negative space OR controlled density.
+<span class="c">-</span> <span class="k">Backgrounds &amp; Visual Details</span>: Create atmosphere and
+  depth rather than defaulting to solid colors. Add
+  contextual effects and textures that match the overall
+  aesthetic. Apply creative forms like gradient meshes,
+  noise textures, geometric patterns, layered transparencies,
+  dramatic shadows, decorative borders, custom cursors, and
+  grain overlays.
+
+NEVER use generic AI-generated aesthetics like overused font
+families (Inter, Roboto, Arial, system fonts), cliched color
+schemes (particularly purple gradients on white backgrounds),
+predictable layouts and component patterns, and cookie-cutter
+design that lacks context-specific character.
+
+Interpret creatively and make unexpected choices that feel
+genuinely designed for the context. No design should be the
+same. Vary between light and dark themes, different fonts,
+different aesthetics. NEVER converge on common choices
+(Space Grotesk, for example) across generations.
+
+<span class="v">IMPORTANT</span>: Match implementation complexity to the aesthetic
+vision. Maximalist designs need elaborate code with extensive
+animations and effects. Minimalist or refined designs need
+restraint, precision, and careful attention to spacing,
+typography, and subtle details. Elegance comes from executing
+the vision well.
+
+Remember: Claude is capable of extraordinary creative work.
+Don't hold back, show what can truly be created when thinking
+outside the box and committing fully to a distinctive vision.</pre>
       </div>
     </div>
   </div>

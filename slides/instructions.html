@@ -30,21 +30,38 @@
       <div class="code-block">
         <div class="code-label">CLAUDE.md / copilot-instructions.md</div>
         <pre><span class="cm">## Architecture</span>
-<span class="s">TypeScript monorepo (pnpm workspaces)
+TypeScript monorepo <span class="c">(pnpm workspaces)</span>
 API: Express + Zod validation
 DB: PostgreSQL via Drizzle ORM
-Tests: Vitest, coverage ≥ 80%</span>
+Tests: Vitest, coverage ≥ <span class="v">80%</span>
 
 <span class="cm">## Workflow</span>
-<span class="s">Plan first, get approval, then implement.
-Auto-commit after each task completes.</span>
+Plan first, get approval, then implement.
+Auto-commit after each task completes.
 
 <span class="cm">## Code Style</span>
-<span class="s">- Named exports only (no default)
-- Prefer const arrow functions
-- No any types — use unknown + guards</span></pre>
+<span class="c">-</span> Named exports only <span class="c">(no default)</span>
+<span class="c">-</span> Prefer <span class="k">const</span> arrow functions
+<span class="c">-</span> No <span class="k">any</span> types — use <span class="k">unknown</span> + guards</pre>
       </div>
       <p class="body-sm" style="margin-top:20px;padding:0 4px">💡 Keep instructions concise — both tools inject them into <strong style="color:var(--text)">every session</strong>, consuming permanent context tokens.</p>
+      <div class="card" style="margin-top:16px;padding:20px 24px">
+        <div class="eyebrow eyebrow-orange" style="margin-bottom:14px">Instruction Budget</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:baseline;gap:14px">
+            <div style="font-family:var(--f-mono);font-size:22px;font-weight:700;color:var(--green);min-width:110px">150–200</div>
+            <div class="body-sm">Opus 4.5 &amp; stronger models can follow this many with reasonable consistency.</div>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:14px">
+            <div style="font-family:var(--f-mono);font-size:22px;font-weight:700;color:var(--orange);min-width:110px">&lt; 100</div>
+            <div class="body-sm">Weaker models start dropping rules well before this ceiling.</div>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:14px">
+            <div style="font-family:var(--f-mono);font-size:22px;font-weight:700;color:var(--red);min-width:110px">~50</div>
+            <div class="body-sm">Already baked into Claude's system prompt — your budget is what remains.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
