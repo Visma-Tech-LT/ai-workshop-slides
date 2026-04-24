@@ -8,6 +8,8 @@
   <button class="nav-btn" id="prevBtn" onclick="go(-1)">&#8592;</button>
   <span class="nav-counter" id="counter">1 / 19</span>
   <button class="nav-btn" id="nextBtn" onclick="go(1)">&#8594;</button>
+  <div class="nav-sep"></div>
+  <button class="nav-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle light/dark mode" style="font-size:18px"></button>
 </div>
 
 
@@ -77,6 +79,21 @@ document.addEventListener('keydown',e=>{
 let tx=0;
 document.addEventListener('touchstart',e=>{tx=e.changedTouches[0].screenX});
 document.addEventListener('touchend',e=>{const d=tx-e.changedTouches[0].screenX;if(Math.abs(d)>50)go(d>0?1:-1)});
+
+/* ── THEME ── */
+const themeToggle=document.getElementById('themeToggle');
+function applyTheme(t){
+  document.documentElement.dataset.theme=t==='light'?'light':'';
+  themeToggle.textContent=t==='light'?'☽':'☀';
+}
+function toggleTheme(){
+  const next=document.documentElement.dataset.theme==='light'?'dark':'light';
+  localStorage.setItem('theme',next);
+  applyTheme(next);
+}
+const savedTheme=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');
+applyTheme(savedTheme);
+
 show(0);
 </script>
 </body>

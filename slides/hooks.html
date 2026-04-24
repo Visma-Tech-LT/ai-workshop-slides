@@ -5,7 +5,6 @@
   <div class="split">
     <div class="split-l">
       <div class="dot-grid"></div>
-      <div class="section-num">04</div>
       <div style="position:relative;z-index:1">
         <div class="eyebrow eyebrow-green">04 · Hooks</div>
         <h2>Deterministic<br><span class="accent">Guards</span></h2>
@@ -18,7 +17,7 @@
           <span class="chip chip-purple">PermissionRequest</span>
           <span class="chip chip-orange">FileChanged</span>
         </div>
-        <div style="margin-top:28px" class="card" style="border-color:rgba(219,107,125,.25);background:rgba(219,107,125,.05)">
+        <div class="card" style="margin-top:28px;border-color:var(--tint-red-border);background:var(--tint-red)">
           <p class="body-sm"><strong style="color:var(--text)">Exit code 2</strong> blocks the operation — skills can't override this.</p>
         </div>
       </div>
@@ -40,15 +39,15 @@
       </div>
       <!-- Hook flow diagram -->
       <div style="display:flex;align-items:center;gap:0">
-        <div style="padding:12px 16px;border-radius:12px;background:rgba(65,155,215,.08);border:1px solid rgba(65,155,215,.25);font-family:var(--f-mono);font-size:13px;color:var(--blue)">git commit</div>
+        <div style="padding:12px 16px;border-radius:12px;background:var(--tint-blue);border:1px solid var(--tint-blue-border);font-family:var(--f-mono);font-size:13px;color:var(--blue)">git commit</div>
         <div style="color:var(--faint);font-size:20px;padding:0 8px">→</div>
-        <div style="padding:12px 16px;border-radius:12px;background:rgba(138,128,189,.08);border:1px solid rgba(138,128,189,.25);font-family:var(--f-mono);font-size:13px;color:var(--purple)">PreToolUse</div>
+        <div style="padding:12px 16px;border-radius:12px;background:var(--tint-purple);border:1px solid var(--tint-purple-border);font-family:var(--f-mono);font-size:13px;color:var(--purple)">PreToolUse</div>
         <div style="color:var(--faint);font-size:20px;padding:0 8px">→</div>
-        <div style="padding:12px 16px;border-radius:12px;background:rgba(229,162,62,.08);border:1px solid rgba(229,162,62,.25);font-family:var(--f-mono);font-size:13px;color:var(--orange)">npm test</div>
+        <div style="padding:12px 16px;border-radius:12px;background:var(--tint-orange);border:1px solid var(--tint-orange-border);font-family:var(--f-mono);font-size:13px;color:var(--orange)">npm test</div>
         <div style="color:var(--faint);font-size:20px;padding:0 8px">→</div>
         <div style="display:flex;flex-direction:column;gap:6px">
-          <div style="padding:8px 14px;border-radius:10px;background:rgba(103,168,112,.08);border:1px solid rgba(103,168,112,.3);font-family:var(--f-mono);font-size:12px;color:var(--green)">pass → commit</div>
-          <div style="padding:8px 14px;border-radius:10px;background:rgba(219,107,125,.08);border:1px solid rgba(219,107,125,.3);font-family:var(--f-mono);font-size:12px;color:var(--red)">fail → blocked</div>
+          <div style="padding:8px 14px;border-radius:10px;background:var(--tint-green);border:1px solid var(--tint-green-border);font-family:var(--f-mono);font-size:12px;color:var(--green)">pass → commit</div>
+          <div style="padding:8px 14px;border-radius:10px;background:var(--tint-red);border:1px solid var(--tint-red-border);font-family:var(--f-mono);font-size:12px;color:var(--red)">fail → blocked</div>
         </div>
       </div>
       <div class="code-block">

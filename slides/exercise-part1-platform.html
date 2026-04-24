@@ -1,0 +1,230 @@
+<!-- ════════════════════════════════════════
+     PART 1 EXERCISE — platform wiring
+════════════════════════════════════════ -->
+<div class="slide" data-i="10b">
+  <div class="left">
+    <div class="eyebrow eyebrow-green" style="margin-bottom:12px">Part 1 · Exercise · Platform</div>
+    <h3 style="margin-bottom:20px">Now wire up the <span class="accent">agent platform</span></h3>
+
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:16px 40px">
+
+      <!-- AGENTS -->
+      <div>
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px">
+          <span style="font-size:11px;font-family:var(--f-mono);color:var(--blue);letter-spacing:.12em">AGENTS</span>
+          <span class="body-sm" style="color:var(--muted)">— give Claude a focused job with clear boundaries</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+          <div class="card ex1-clickable" data-prompt="code-researcher" style="padding:12px 14px;border-color:rgba(65,155,215,.2);cursor:pointer;transition:border-color .2s,background .2s" onmouseenter="this.style.borderColor='rgba(65,155,215,.5)';this.style.background='rgba(65,155,215,.06)'" onmouseleave="this.style.borderColor='rgba(65,155,215,.2)';this.style.background=''">
+            <code style="font-size:15px;color:var(--text);display:block;margin-bottom:4px">code-researcher</code>
+            <p class="body-sm" style="margin:0;font-size:15px">Read-only. Ask it to explain the codebase before you change anything.</p>
+            <span style="font-size:12px;font-family:var(--f-mono);color:var(--blue);opacity:.6;margin-top:6px;display:block">click for prompt ↗</span>
+          </div>
+          <div class="card ex1-clickable" data-prompt="frontend-developer" style="padding:12px 14px;border-color:rgba(65,155,215,.2);cursor:pointer;transition:border-color .2s,background .2s" onmouseenter="this.style.borderColor='rgba(65,155,215,.5)';this.style.background='rgba(65,155,215,.06)'" onmouseleave="this.style.borderColor='rgba(65,155,215,.2)';this.style.background=''">
+            <code style="font-size:15px;color:var(--text);display:block;margin-bottom:4px">frontend-developer</code>
+            <p class="body-sm" style="margin:0;font-size:15px">UI files only. Add a dark mode toggle — it won't touch your API.</p>
+            <span style="font-size:12px;font-family:var(--f-mono);color:var(--blue);opacity:.6;margin-top:6px;display:block">click for prompt ↗</span>
+          </div>
+          <div class="card ex1-clickable" data-prompt="test-writer" style="padding:12px 14px;border-color:rgba(65,155,215,.2);cursor:pointer;transition:border-color .2s,background .2s" onmouseenter="this.style.borderColor='rgba(65,155,215,.5)';this.style.background='rgba(65,155,215,.06)'" onmouseleave="this.style.borderColor='rgba(65,155,215,.2)';this.style.background=''">
+            <code style="font-size:15px;color:var(--text);display:block;margin-bottom:4px">test-writer</code>
+            <p class="body-sm" style="margin:0;font-size:15px">Point at a file, get tests back. Good first agent to try.</p>
+            <span style="font-size:12px;font-family:var(--f-mono);color:var(--blue);opacity:.6;margin-top:6px;display:block">click for prompt ↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div>
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px">
+          <span style="font-size:11px;font-family:var(--f-mono);color:var(--orange);letter-spacing:.12em">SKILLS</span>
+          <span class="body-sm" style="color:var(--muted)">— repeatable slash commands you trigger yourself</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <div class="card ex1-clickable" data-prompt="new-feature" style="padding:12px 14px;border-color:rgba(229,162,62,.2);cursor:pointer;transition:border-color .2s,background .2s" onmouseenter="this.style.borderColor='rgba(229,162,62,.5)';this.style.background='rgba(229,162,62,.06)'" onmouseleave="this.style.borderColor='rgba(229,162,62,.2)';this.style.background=''">
+            <code style="font-size:15px;color:var(--text);display:block;margin-bottom:4px">/new-feature</code>
+            <p class="body-sm" style="margin:0;font-size:15px">Scaffolds component + test. Try: <span style="font-family:var(--f-mono)">/new-feature "export CSV"</span></p>
+            <span style="font-size:12px;font-family:var(--f-mono);color:var(--orange);opacity:.6;margin-top:6px;display:block">click for prompt ↗</span>
+          </div>
+          <div class="card ex1-clickable" data-prompt="code-review" style="padding:12px 14px;border-color:rgba(229,162,62,.2);cursor:pointer;transition:border-color .2s,background .2s" onmouseenter="this.style.borderColor='rgba(229,162,62,.5)';this.style.background='rgba(229,162,62,.06)'" onmouseleave="this.style.borderColor='rgba(229,162,62,.2)';this.style.background=''">
+            <code style="font-size:15px;color:var(--text);display:block;margin-bottom:4px">/code-review</code>
+            <p class="body-sm" style="margin:0;font-size:15px">Checks your diff against CLAUDE.md conventions.</p>
+            <span style="font-size:12px;font-family:var(--f-mono);color:var(--orange);opacity:.6;margin-top:6px;display:block">click for prompt ↗</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOOKS -->
+      <div>
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px">
+          <span style="font-size:11px;font-family:var(--f-mono);color:var(--purple);letter-spacing:.12em">HOOKS</span>
+          <span class="body-sm" style="color:var(--muted)">— shell commands Claude can't skip</span>
+        </div>
+        <div class="card ex1-clickable" data-prompt="hook-precommit" style="padding:12px 14px;border-color:rgba(138,128,189,.2);cursor:pointer;transition:border-color .2s,background .2s" onmouseenter="this.style.borderColor='rgba(138,128,189,.5)';this.style.background='rgba(138,128,189,.06)'" onmouseleave="this.style.borderColor='rgba(138,128,189,.2)';this.style.background=''">
+          <code style="font-size:15px;color:var(--text);display:block;margin-bottom:4px">PreToolUse: Bash</code>
+          <p class="body-sm" style="margin:0;font-size:15px">Run tests before every commit — Claude can't bypass it.</p>
+          <span style="font-size:12px;font-family:var(--f-mono);color:var(--purple);opacity:.6;margin-top:6px;display:block">click for prompt ↗</span>
+        </div>
+      </div>
+
+      <!-- MCP -->
+      <div>
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px">
+          <span style="font-size:11px;font-family:var(--f-mono);color:var(--green);letter-spacing:.12em">MCP</span>
+          <span class="body-sm" style="color:var(--muted)">— external tools Claude can use</span>
+        </div>
+        <div class="card ex1-clickable" data-prompt="github-mcp" style="padding:12px 14px;border-color:rgba(103,168,112,.2);cursor:pointer;transition:border-color .2s,background .2s" onmouseenter="this.style.borderColor='rgba(103,168,112,.5)';this.style.background='rgba(103,168,112,.06)'" onmouseleave="this.style.borderColor='rgba(103,168,112,.2)';this.style.background=''">
+          <code style="font-size:15px;color:var(--text);display:block;margin-bottom:4px">GitHub MCP</code>
+          <p class="body-sm" style="margin:0;font-size:15px">Let Claude open PRs and issues without leaving the terminal.</p>
+          <span style="font-size:12px;font-family:var(--f-mono);color:var(--green);opacity:.6;margin-top:6px;display:block">click for command ↗</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PROMPT MODAL -->
+  <div id="ex1-modal" style="display:none;position:fixed;inset:0;z-index:1000;align-items:center;justify-content:center;background:rgba(0,0,0,.75);backdrop-filter:blur(6px)" onclick="if(event.target===this)ex1CloseModal()">
+    <div style="background:#0d1117;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px;max-width:640px;width:90%;max-height:80vh;overflow-y:auto;position:relative">
+      <button onclick="ex1CloseModal()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:var(--muted);font-size:16px;width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1">✕</button>
+      <div id="ex1-modal-label" style="font-size:11px;font-family:var(--f-mono);letter-spacing:.12em;margin-bottom:6px;text-transform:uppercase"></div>
+      <div id="ex1-modal-title" style="font-size:20px;font-weight:700;color:var(--text);margin-bottom:4px;font-family:var(--f-mono)"></div>
+      <div id="ex1-modal-file" style="font-size:12px;font-family:var(--f-mono);color:var(--muted);margin-bottom:16px"></div>
+      <div style="position:relative">
+        <pre id="ex1-modal-content" style="background:#06080a;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;font-size:13px;line-height:1.7;color:#c9d1d9;white-space:pre;overflow-x:auto;margin:0;font-family:var(--f-mono)"></pre>
+        <button id="ex1-copy-btn" onclick="ex1CopyPrompt()" style="position:absolute;top:10px;right:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:var(--muted);font-size:12px;font-family:var(--f-mono);padding:5px 12px;cursor:pointer;transition:all .2s" onmouseenter="this.style.background='rgba(255,255,255,.12)';this.style.color='var(--text)'" onmouseleave="this.style.background='rgba(255,255,255,.06)';this.style.color='var(--muted)'">copy</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var prompts = {
+    'code-researcher': {
+      label: 'Paste into Claude Code to create this agent',
+      title: 'code-researcher',
+      file: 'Claude will create .claude/agents/code-researcher.md for you',
+      color: 'var(--blue)',
+      content: `Create a code-researcher agent for this project.
+
+It should be read-only — its only job is to explore and explain
+the codebase. It must never create, edit, or delete any files.
+
+When done, it should summarize:
+- Key files and their purpose
+- Patterns and conventions used
+- Anything to be aware of before making changes`
+    },
+    'frontend-developer': {
+      label: 'Paste into Claude Code to create this agent',
+      title: 'frontend-developer',
+      file: 'Claude will create .claude/agents/frontend-developer.md for you',
+      color: 'var(--blue)',
+      content: `Create a frontend-developer agent for this project.
+
+It should only work on frontend files: components/, pages/, app/, styles/.
+It must never touch API routes, database files, or server-side code.
+
+It should check for existing components before creating new ones
+and follow the UI conventions described in CLAUDE.md.`
+    },
+    'test-writer': {
+      label: 'Paste into Claude Code to create this agent',
+      title: 'test-writer',
+      file: 'Claude will create .claude/agents/test-writer.md for you',
+      color: 'var(--blue)',
+      content: `Create a test-writer agent for this project.
+
+When given a source file, it should write comprehensive unit tests for it.
+It must never modify source files — only create or modify test files.
+
+It should match the testing framework and patterns already used
+in the project, and cover the happy path, edge cases, and errors.`
+    },
+    'new-feature': {
+      label: 'Paste into Claude Code to create this skill',
+      title: '/new-feature',
+      file: 'Claude will create .claude/commands/new-feature.md for you',
+      color: 'var(--orange)',
+      content: `Create a /new-feature slash command for this project.
+
+When triggered with a feature name, it should:
+1. Research existing patterns in the codebase first
+2. Scaffold the feature — component file + test file
+3. Follow existing naming and structure conventions
+4. Not touch unrelated files`
+    },
+    'code-review': {
+      label: 'Paste into Claude Code to create this skill',
+      title: '/code-review',
+      file: 'Claude will create .claude/commands/code-review.md for you',
+      color: 'var(--orange)',
+      content: `Create a /code-review slash command for this project.
+
+When triggered, it should review the current git diff against
+the conventions defined in CLAUDE.md.
+
+For each issue: cite file and line, explain the violation,
+suggest a fix. Output a numbered list. If nothing is wrong, say so.`
+    },
+    'hook-precommit': {
+      label: 'Paste into Claude Code to create this hook',
+      title: 'PreToolUse hook',
+      file: 'Claude will add it to .claude/settings.json for you',
+      color: 'var(--purple)',
+      content: `Add a PreToolUse hook to this project that runs the test suite
+before any git commit Bash command executes.
+
+If the tests fail, the hook should block the commit and show
+the test output. Claude should not be able to bypass it.`
+    },
+    'github-mcp': {
+      label: 'Run this command in your terminal',
+      title: 'GitHub MCP',
+      file: 'Adds GitHub MCP to your Claude Code config',
+      color: 'var(--green)',
+      content: `claude mcp add --transport http github https://api.githubcopilot.com/mcp/ \\
+  --header "Authorization: Bearer YOUR_GITHUB_PAT"`
+    }
+  };
+
+  document.querySelectorAll('.ex1-clickable').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var key = el.dataset.prompt;
+      var p = prompts[key];
+      if (!p) return;
+      document.getElementById('ex1-modal-label').textContent = p.label;
+      document.getElementById('ex1-modal-label').style.color = p.color;
+      document.getElementById('ex1-modal-title').textContent = p.title;
+      document.getElementById('ex1-modal-title').style.color = p.color;
+      document.getElementById('ex1-modal-file').textContent = p.file;
+      document.getElementById('ex1-modal-content').textContent = p.content;
+      document.getElementById('ex1-copy-btn').textContent = 'copy';
+      var modal = document.getElementById('ex1-modal');
+      modal.style.display = 'flex';
+    });
+  });
+
+  window.ex1CloseModal = function() {
+    document.getElementById('ex1-modal').style.display = 'none';
+  };
+
+  window.ex1CopyPrompt = function() {
+    var content = document.getElementById('ex1-modal-content').textContent;
+    navigator.clipboard.writeText(content).then(function() {
+      var btn = document.getElementById('ex1-copy-btn');
+      btn.textContent = 'copied!';
+      btn.style.color = 'var(--green)';
+      setTimeout(function() {
+        btn.textContent = 'copy';
+        btn.style.color = '';
+      }, 1800);
+    });
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') ex1CloseModal();
+  });
+})();
+</script>

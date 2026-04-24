@@ -1,6 +1,6 @@
 # AI Engineering Workshop — Slides
 
-Collaborative slide deck for the Visma AI Engineering Workshop (April 2026).
+Collaborative slide deck for the Visma AI Engineering Workshop (2026).
 
 ## Structure
 

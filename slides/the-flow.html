@@ -8,9 +8,8 @@
     <div class="wf" style="margin-bottom:36px;gap:8px">
       <div class="wf-box blue">1. Research</div><div class="wf-arrow">→</div>
       <div class="wf-box orange">2. Plan</div><div class="wf-arrow">→</div>
-      <div class="wf-box red">3. Skeptic Gate</div><div class="wf-arrow">→</div>
-      <div class="wf-box green">4. Implement</div><div class="wf-arrow">→</div>
-      <div class="wf-box red">5. Review</div>
+      <div class="wf-box green">3. Implement</div><div class="wf-arrow">→</div>
+      <div class="wf-box red">4. Review</div>
     </div>
     <div style="display:flex;flex-direction:column;gap:10px;max-width:860px">
       <div class="card" style="border-color:rgba(65,155,215,.25);padding:18px 24px;display:flex;align-items:baseline;gap:16px">
@@ -21,10 +20,6 @@
         <span style="font-family:var(--f-mono);font-size:14px;color:var(--orange);min-width:90px">PLAN</span>
         <span class="body-sm"><code>/create-plan</code> based on <code style="color:var(--purple)">@research.md</code> implement OCR → <em style="color:var(--purple)">plan.md → /clear</em></span>
       </div>
-      <div class="card" style="border-color:rgba(219,107,125,.25);padding:18px 24px;display:flex;align-items:baseline;gap:16px">
-        <span style="font-family:var(--f-mono);font-size:14px;color:var(--red);min-width:90px">SKEPTIC</span>
-        <span class="body-sm">"Challenge this plan." → <em style="color:var(--green)">PROCEED</em> or <em style="color:var(--red)">REVISE → fix plan → re-run</em></span>
-      </div>
       <div class="card" style="border-color:rgba(103,168,112,.25);padding:18px 24px;display:flex;align-items:baseline;gap:16px">
         <span style="font-family:var(--f-mono);font-size:14px;color:var(--green);min-width:90px">IMPLEMENT</span>
         <span class="body-sm"><code>/implement-plan</code> <code style="color:var(--purple)">@plan.md</code> Start with task 1.1. Reset context between tasks.</span>
@@ -34,8 +29,6 @@
         <span class="body-sm"><code>/code-review</code> <code style="color:var(--purple)">@plan.md</code> → <em style="color:var(--purple)">review.md → fix critical → optionally repeat</em></span>
       </div>
     </div>
-    <div class="card" style="margin-top:16px;max-width:860px;border-color:rgba(229,162,62,.25);background:rgba(229,162,62,.05);padding:16px 24px">
-      <p class="body-sm"><strong style="color:var(--orange)">Fix problems in the plan before touching code.</strong> The skeptic gate is cheap — catching a wrong assumption in plan.md costs one prompt; catching it in code costs a debug session.</p>
-    </div>
+
   </div>
 </div>

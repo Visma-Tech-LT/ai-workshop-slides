@@ -1,6 +1,8 @@
 title.html
 agenda.html
+install.html
 setup.html
+claude-commands.html
 part1-agent-config.html
 instructions.html
 agents.html
@@ -10,14 +12,16 @@ mcp.html
 security.html
 sandbox.html
 exercise-part1.html
+exercise-part1-platform.html
 lunch.html
 part2-spec-driven.html
 constraints.html
 context-handoffs.html
 the-flow.html
-skeptic.html
 workers-managers.html
 exercise-part2.html
+skeptic.html
+flow-with-skeptic.html
 exercise-advanced.html
 free-time.html
 retro.html

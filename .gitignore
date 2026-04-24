@@ -3,3 +3,12 @@ index.html
 
 # macOS
 .DS_Store
+
+# Node
+node_modules/
+package-lock.json
+
+# Screenshot tooling
+slide-screenshots/
+screenshot-slides.js
+package.json

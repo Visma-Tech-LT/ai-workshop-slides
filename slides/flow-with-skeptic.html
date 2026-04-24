@@ -1,0 +1,41 @@
+<!-- ════════════════════════════════════════
+     FLOW WITH SKEPTIC — LEVEL UP
+════════════════════════════════════════ -->
+<div class="slide" data-i="0">
+  <div class="left" style="padding:60px 100px">
+    <div class="eyebrow eyebrow-red" style="margin-bottom:20px">Level Up · The Enhanced Flow</div>
+    <h2 style="margin-bottom:32px">Add the <span class="red">Skeptic Gate</span></h2>
+    <div class="wf" style="margin-bottom:36px;gap:8px">
+      <div class="wf-box blue">1. Research</div><div class="wf-arrow">→</div>
+      <div class="wf-box orange">2. Plan</div><div class="wf-arrow">→</div>
+      <div class="wf-box red">3. Skeptic</div><div class="wf-arrow">→</div>
+      <div class="wf-box green">4. Implement</div><div class="wf-arrow">→</div>
+      <div class="wf-box red">5. Review</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;max-width:860px">
+      <div class="card" style="border-color:rgba(65,155,215,.25);padding:18px 24px;display:flex;align-items:baseline;gap:16px">
+        <span style="font-family:var(--f-mono);font-size:14px;color:var(--blue);min-width:90px">RESEARCH</span>
+        <span class="body-sm"><code>/sdw:research-codebase</code> → review <code style="color:var(--purple)">research-*.md</code> → <code>/clear</code></span>
+      </div>
+      <div class="card" style="border-color:rgba(229,162,62,.25);padding:18px 24px;display:flex;align-items:baseline;gap:16px">
+        <span style="font-family:var(--f-mono);font-size:14px;color:var(--orange);min-width:90px">PLAN</span>
+        <span class="body-sm"><code>/sdw:create-plan @research-*.md</code> → review <code style="color:var(--purple)">plan-*.md</code> → <code>/clear</code></span>
+      </div>
+      <div class="card" style="border-color:var(--tint-red-border);background:var(--tint-red);padding:18px 24px;display:flex;align-items:baseline;gap:16px">
+        <span style="font-family:var(--f-mono);font-size:14px;color:var(--red);min-width:90px">SKEPTIC</span>
+        <span class="body-sm"><code>@skeptic</code> <code style="color:var(--purple)">@plan-*.md</code> → <em style="color:var(--green)">PROCEED</em> or <em style="color:var(--red)">REVISE → fix → re-run</em> → <code>/clear</code></span>
+      </div>
+      <div class="card" style="border-color:rgba(103,168,112,.25);padding:18px 24px;display:flex;align-items:baseline;gap:16px">
+        <span style="font-family:var(--f-mono);font-size:14px;color:var(--green);min-width:90px">IMPLEMENT</span>
+        <span class="body-sm"><code>/sdw:implement-plan @plan-*.md</code> — phase by phase, reset context between phases</span>
+      </div>
+      <div class="card" style="border-color:rgba(219,107,125,.25);padding:18px 24px;display:flex;align-items:baseline;gap:16px">
+        <span style="font-family:var(--f-mono);font-size:14px;color:var(--red);min-width:90px">REVIEW</span>
+        <span class="body-sm"><code>/sdw:code-review</code> → fix critical → optionally repeat</span>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px;max-width:860px;border-color:var(--tint-red-border);background:var(--tint-red);padding:16px 24px">
+      <p class="body-sm"><strong style="color:var(--red)">Catching a wrong assumption in plan.md costs one prompt.</strong> Catching it in code costs a debug session.</p>
+    </div>
+  </div>
+</div>
