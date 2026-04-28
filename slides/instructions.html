@@ -10,24 +10,27 @@
         <h2>Agent<br><span class="accent">Memory</span></h2>
         <p class="body-md">Persistent context that loads at every session start. The agent reads this before anything else — project conventions, architecture, workflow rules.</p>
         <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px">
-          <div class="card" style="padding:18px 22px">
+          <div class="card" style="padding:16px 22px">
             <div style="font-size:13px;color:var(--muted);margin-bottom:6px;font-family:var(--f-mono);letter-spacing:.08em">CLAUDE CODE</div>
-            <code style="font-size:16px">CLAUDE.md</code> <span class="body-sm" style="color:var(--muted)">at project root</span>
+            <code style="font-size:16px">CLAUDE.md</code>
+            <div class="body-sm" style="color:var(--muted);margin-top:4px">Only file Claude auto-loads.</div>
           </div>
-          <div class="card" style="padding:18px 22px">
-            <div style="font-size:13px;color:var(--muted);margin-bottom:6px;font-family:var(--f-mono);letter-spacing:.08em">COPILOT CLI</div>
-            <code style="font-size:16px">.github/copilot-instructions.md</code>
+          <div class="card" style="padding:16px 22px">
+            <div style="font-size:13px;color:var(--muted);margin-bottom:6px;font-family:var(--f-mono);letter-spacing:.08em">COPILOT</div>
+            <code style="font-size:16px">AGENTS.md</code> <span class="body-sm" style="color:var(--muted)">+</span> <code style="font-size:16px">.github/copilot-instructions.md</code>
+            <div class="body-sm" style="color:var(--muted);margin-top:4px">Reads both — layers if both exist. <code>copilot-instructions.md</code> is the older convention, still supported.</div>
           </div>
-          <div class="card" style="padding:18px 22px;border-color:var(--tint-green-border);background:var(--tint-green)">
-            <div style="font-size:13px;color:var(--green);margin-bottom:6px;font-family:var(--f-mono);letter-spacing:.08em">CROSS-TOOL TIP</div>
-            <span class="body-sm">Use <code>AGENTS.md</code> at root — both tools read it natively.</span>
+          <div class="card" style="padding:16px 22px">
+            <div style="font-size:13px;color:var(--muted);margin-bottom:6px;font-family:var(--f-mono);letter-spacing:.08em">OTHER TOOLS</div>
+            <code style="font-size:16px">AGENTS.md</code>
+            <div class="body-sm" style="color:var(--muted);margin-top:4px">Cursor, Windsurf, Aider, Gemini CLI…</div>
           </div>
         </div>
       </div>
     </div>
     <div class="split-r">
       <div class="code-block">
-        <div class="code-label">CLAUDE.md / copilot-instructions.md</div>
+        <div class="code-label">CLAUDE.md / AGENTS.md</div>
         <pre><span class="cm">## Architecture</span>
 TypeScript monorepo <span class="c">(pnpm workspaces)</span>
 API: Express + Zod validation
