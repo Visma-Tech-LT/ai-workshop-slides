@@ -144,9 +144,9 @@ in the project, and cover the happy path, edge cases, and errors.`
     'new-feature': {
       label: 'Paste into Claude Code to create this skill',
       title: '/new-feature',
-      file: 'Claude will create .claude/commands/new-feature.md for you',
+      file: 'Claude will create .claude/skills/new-feature/SKILL.md for you',
       color: 'var(--orange)',
-      content: `Create a /new-feature slash command for this project.
+      content: `Create a /new-feature skill for this project.
 
 When triggered with a feature name, it should:
 1. Research existing patterns in the codebase first
@@ -157,9 +157,9 @@ When triggered with a feature name, it should:
     'code-review': {
       label: 'Paste into Claude Code to create this skill',
       title: '/code-review',
-      file: 'Claude will create .claude/commands/code-review.md for you',
+      file: 'Claude will create .claude/skills/code-review/SKILL.md for you',
       color: 'var(--orange)',
-      content: `Create a /code-review slash command for this project.
+      content: `Create a /code-review skill for this project.
 
 When triggered, it should review the current git diff against
 the conventions defined in CLAUDE.md.
