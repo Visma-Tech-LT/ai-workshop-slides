@@ -40,8 +40,12 @@
       </div>
       <div class="card" style="padding:16px 20px;border-color:rgba(65,155,215,.2)">
         <div style="font-size:11px;font-family:var(--f-mono);color:var(--blue);margin-bottom:8px;letter-spacing:.08em">1. RESEARCH</div>
+        <div style="margin-bottom:6px">
+          <code style="font-size:14px">/sdw:research-prompt</code>
+          <span class="body-sm" style="color:var(--muted)">— optional: rewrites "build X" into "understand X"</span>
+        </div>
         <code style="font-size:14px">/sdw:research-codebase</code>
-        <p class="body-sm" style="margin-top:6px">Tell Claude what you want to build. Review <code>.claude/ai/research-*.md</code>. Then <code>/clear</code>.</p>
+        <p class="body-sm" style="margin-top:6px">If you're tempted to jump to "build X", run <code>research-prompt</code> first — it transforms your prompt to focus on what exists. Then <code>research-codebase</code> explores the area. Review <code>.claude/ai/research-*.md</code>. Then <code>/clear</code>.</p>
       </div>
       <div class="card" style="padding:16px 20px;border-color:rgba(229,162,62,.2)">
         <div style="font-size:11px;font-family:var(--f-mono);color:var(--orange);margin-bottom:8px;letter-spacing:.08em">2. PLAN</div>
