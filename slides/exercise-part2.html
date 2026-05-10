@@ -18,7 +18,10 @@
         <div class="code-block">
           <div class="code-label">Install the workflow plugin first</div>
           <pre style="font-size:13px"><span class="v">/plugin</span> marketplace add <span class="s">https://github.com/Visma-Tech-LT/ai-workshop-marketplace</span>
-<span class="v">/plugin</span> install <span class="s">sdw@ai-workshop</span></pre>
+<span class="v">/plugin</span> install <span class="s">sdw@ai-workshop</span> <span class="v">--scope local</span></pre>
+        </div>
+        <div class="card" style="margin-top:10px;border-color:var(--tint-orange-border);background:var(--tint-orange);padding:12px 18px">
+          <p class="body-sm" style="margin:0"><strong style="color:var(--orange)">💡 Scope = local</strong> — installs the plugin into <strong>this repo only</strong> (<code>.claude/settings.local.json</code>, gitignored). Skip the flag and Claude will ask you — pick <em>"Install for you, in this repo only"</em>.</p>
         </div>
         <a href="https://github.com/Visma-Tech-LT/ai-workshop-marketplace" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-family:var(--f-mono);font-size:13px;color:var(--blue);text-decoration:none;opacity:.8;transition:opacity .2s" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.8'">
           🐙 github.com/Visma-Tech-LT/ai-workshop-marketplace
